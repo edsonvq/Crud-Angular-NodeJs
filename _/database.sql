@@ -1,0 +1,41 @@
+CREATE TABLE CLIENTES (
+id_cliente int NOT NULL AUTO_INCREMENT,
+nome_cliente varchar(40) NOT NULL,
+data_niver date NOT NULL,
+email varchar(60) NOT NULL,
+senha varchar(255) NULL,
+PRIMARY KEY(id_cliente));
+
+CREATE TABLE CATEGORIAPRODUTOS (
+id_categ_prod int NOT NULL AUTO_INCREMENT,
+desc_categ_prod varchar(40) NOT NULL,
+PRIMARY KEY(id_categ_prod));
+
+CREATE TABLE PRODUTOS (
+id_prod int NOT NULL AUTO_INCREMENT,
+desc_produto varchar(40) NOT NULL,
+preco_produto float NOT NULL,
+id_categ_prod int NOT NULL,
+PRIMARY KEY(id_prod));
+
+INSERT INTO CATEGORIAPRODUTOS VALUES (NULL,"Esportivos");
+INSERT INTO CATEGORIAPRODUTOS VALUES (NULL,"Festa");
+INSERT INTO CATEGORIAPRODUTOS VALUES (NULL,"Confort");
+INSERT INTO CATEGORIAPRODUTOS VALUES (NULL,"Crocs");
+
+INSERT INTO PRODUTOS VALUES (NULL,"Tenis NIKE X",678.90,1);
+INSERT INTO PRODUTOS VALUES (NULL,"Tenis Adidas Y",566.99,1);
+INSERT INTO PRODUTOS VALUES (NULL,"Viviana",351.90,2);
+INSERT INTO PRODUTOS VALUES (NULL,"Arezzo",432.87,2);
+INSERT INTO PRODUTOS VALUES (NULL,"Picadilly",223.87,3);
+INSERT INTO PRODUTOS VALUES (NULL,"Tradicional",432.87,4);
+INSERT INTO PRODUTOS VALUES (NULL,"Sapatilha",289.90,4);
+
+
+INSERT INTO CLIENTES VALUES (NULL,"Monica Ferraz","12/04/1990","ferraz@ig.com.br");
+INSERT INTO CLIENTES VALUES (NULL,"Beatriz Segal","12/04/1990","bsegal@cotuca.br");
+INSERT INTO CLIENTES VALUES (NULL,"Luciana Vasconcelos","30/03/2000","luvaz@ig.com.br");
+INSERT INTO CLIENTES VALUES (NULL,"Anderson Nascimento","19/08/1990","nascimento@ig.com.br");
+INSERT INTO CLIENTES VALUES (NULL,"Luiz Castro","10/01/1972","castro@gmail.com");
+INSERT INTO CLIENTES VALUES (NULL,"Lucia Gomes","27/07/1972","lucia@hotmail.com");
+INSERT INTO CLIENTES VALUES (NULL,"Paulo Vidal","23/07/2002","pvidal@ig.com.br");

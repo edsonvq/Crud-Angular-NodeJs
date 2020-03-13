@@ -1,0 +1,9 @@
+<!-- <app-login *ngIf="!online"></app-login>
+<app-product-list *ngIf="online"></app-product-list>
+-->
+
+<div class="container">
+    <app-product-add *ngIf="!online"></app-product-add>
+    <router-outlet></router-outlet>
+
+</div>

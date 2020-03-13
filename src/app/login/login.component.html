@@ -1,0 +1,50 @@
+<div class="login-form">
+
+
+
+    
+
+
+    <form  [formGroup]="formularioLogin"  id="flogin" (ngSubmit) = "onClickLogin()">
+        <div *ngIf="
+        (formularioLogin.controls['email'].invalid && 
+        (formularioLogin.controls['email'].dirty || 
+        formularioLogin.controls['email'].touched)) || 
+        
+        (formularioLogin.controls['senha'].invalid && 
+        (formularioLogin.controls['senha'].dirty || 
+        formularioLogin.controls['senha'].touched))" class="alert alert-danger">
+            <div *ngIf="
+            formularioLogin.controls['email'].invalid && 
+            (formularioLogin.controls['email'].dirty || 
+            formularioLogin.controls['email'].touched)" >
+        
+                <div layout-align="center center" *ngIf="formularioLogin.controls['email'].errors.required">
+                    <strong>Erro!</strong> Digite seu login
+                </div>
+            </div>
+            <div *ngIf="
+            formularioLogin.controls['senha'].invalid && 
+            (formularioLogin.controls['senha'].dirty || 
+            formularioLogin.controls['senha'].touched)" >
+    
+                <div layout-align="center center" *ngIf="formularioLogin.controls['senha'].errors.required">
+                    <strong>Erro!</strong> Digite sua senha
+                </div>
+            </div>
+        </div>
+    
+    <h2 class="text-center">Login</h2>       
+    <div class="form-group">
+        <input  type="text" class="form-control" id="email" placeholder="Email" required="required" formControlName="email" >
+    </div>
+    <div class="form-group">
+        <input type="password" class="form-control" id="senhaa" placeholder="Senha" required="required" formControlName="senha">
+    </div>
+
+    <div class="form-group">
+        <button type="submit" [disabled]="formularioLogin.pristine || formularioLogin.invalid" id="btn_insert" class="btn btn-primary btn-block">Entrar</button>
+    </div>
+</form>
+<p class="text-center"><a href="/cadastro">Cadastro</a></p>
+</div>
